@@ -328,25 +328,20 @@
     text-transform: uppercase;
     color: var(--bg);
     background: var(--gold);
-    border: none;
+    border: 1px solid var(--gold);
     cursor: pointer;
     outline: none;
     text-decoration: none;
     overflow: hidden;
-    transition: color 0.4s ease, transform 0.2s ease, box-shadow 0.4s ease;
+    transition: color 0.4s ease, background 0.4s ease, transform 0.2s ease, box-shadow 0.4s ease;
   }
 
-  .gold-btn::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(120deg, #e8aab4, #c084fc, #60a5fa, #34d399);
-    opacity: 0;
-    transition: opacity 0.4s ease;
+  .gold-btn:hover {
+    color: var(--gold);
+    background: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 34px rgba(201,168,76,0.2);
   }
-
-  .gold-btn:hover { color: #fff; transform: translateY(-2px); box-shadow: 0 10px 34px rgba(201,168,76,0.35); }
-  .gold-btn:hover::before { opacity: 1; }
   .gold-btn span { position: relative; z-index: 1; }
   .gold-btn:active { transform: translateY(0) scale(0.98); }
 
@@ -448,7 +443,7 @@ const ctx = canvas.getContext('2d');
 function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
 resize();
 window.addEventListener('resize', resize);
-ß
+
 const COLORS = ['#c9a84c','#f0d080','#e8aab4','#c084fc','#60a5fa','#34d399','#fdf6e3','#fb923c'];
 let particles = [];
 let animating = false;
